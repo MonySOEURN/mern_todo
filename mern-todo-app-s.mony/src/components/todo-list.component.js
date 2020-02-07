@@ -9,6 +9,7 @@ const Todo = props => (
         <td className={props.todo.todo_completed ? 'completed': ''}>{props.todo.todo_priority}</td>
         <td>
             <Link to={"/edit/"+props.todo._id}>Edit</Link>
+            <Link to={`#`} style={{color: 'red', marginLeft: 20,}} onClick={ () => {props.deleteItem(props.todo)}}>Delete</Link>
         </td>
     </tr>
 );
@@ -17,6 +18,9 @@ export default class TodoList extends Component{
 
     constructor(props){
         super(props);
+
+        this.deleteItem = this.deleteItem.bind(this);
+
         this.state = {
             todo: [],
         }
@@ -46,11 +50,24 @@ export default class TodoList extends Component{
              });
     }
 
+    deleteItem(todo) {
+        if (window.confirm(`Delete the todo ${todo.todo_description}?`)) {
+            axios.delete('http://localhost:4000/todos/delete/'+todo._id)
+             .then( response => {
+                this.props.history.push('/');
+             })
+             .catch( err => {
+                 console.log(err);
+             });
+        }
+    }
+
     showListItems = () => {
         return this.state.todo.map((currentTodo, i) => {
-            return <Todo todo={currentTodo} key={i} />;
+            return <Todo todo={currentTodo} key={i} deleteItem={this.deleteItem}/>;
         });
     }
+
 
     render(){
         return (

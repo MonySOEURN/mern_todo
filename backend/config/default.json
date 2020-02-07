@@ -1,0 +1,5 @@
+{
+    "cloudMongoURI": "mongodb+srv://four:Four123@cluster0-zrfdi.mongodb.net/test?retryWrites=true&w=majority",
+    "localMongoURI": "mongodb://127.0.0.1:27017/",
+    "jwtSecret": "sl_myJwtSecret"
+}
