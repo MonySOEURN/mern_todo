@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client-install": "npm install --prefix mern-todo-app-s.mony", 
+    "client-install": "npm install --prefix mern-todo-app-s.mony",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix mern-todo-app-s.mony",
