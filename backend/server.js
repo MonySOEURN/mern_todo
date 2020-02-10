@@ -23,8 +23,8 @@ const Todo = require('./api/todo.api');
 const Item = require('./api/item.api');
 
 // db config
-// const db = config.get('cloudMongoURI');
-const db = config.get('localMongoURI');
+const db = config.get('cloudMongoURI');
+// const db = config.get('localMongoURI');
 
 app.use(cors());
 
