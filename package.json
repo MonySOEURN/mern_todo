@@ -10,7 +10,7 @@
     "client": "npm start --prefix mern-todo-app-s.mony",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix mern-todo-app-s.monyn && npm run build --prefix mern-todo-app-s.mony"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix mern-todo-app-s.mony && npm run build --prefix mern-todo-app-s.mony"
   },
   "keywords": [],
   "author": "S.Mony",
