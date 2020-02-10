@@ -2,8 +2,13 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "client-install": "npm install --prefix ./../mern-todo-app-s.mony", 
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ./../mern-todo-app-s.mony",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^5.1.0",
     "config": "^3.2.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",

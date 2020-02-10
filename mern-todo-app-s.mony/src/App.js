@@ -5,6 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import TodoList from './components/todo-list.component';
 import EditTodo from './components/edit-todo.component';
 import CreateTodo from './components/create-todo.component';
+import AppNavbar from './components/appNavigationBar.component'; 
+import ShoppingList from './components/shopingList.commponent';
+import './App.css';
 
 function App() {
   return (
@@ -29,6 +32,8 @@ function App() {
             </ul>
           </div>
         </nav>
+        <AppNavbar />
+        <ShoppingList />
         <Route path="/" exact component={TodoList}/>
         <Route path="/edit/:id" component={EditTodo}/>
         <Route path="/create" component={CreateTodo}/>

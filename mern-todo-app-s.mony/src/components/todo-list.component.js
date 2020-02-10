@@ -52,7 +52,7 @@ export default class TodoList extends Component{
 
     deleteItem(todo) {
         if (window.confirm(`Delete the todo ${todo.todo_description}?`)) {
-            axios.delete('http://localhost:4000/todos/delete/'+todo._id)
+            axios.delete('http://localhost:4000/todos/'+todo._id)
              .then( response => {
                 this.props.history.push('/');
              })
