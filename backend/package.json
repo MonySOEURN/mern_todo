@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix ./../mern-todo-app-s.mony", 
     "start": "node server.js",
