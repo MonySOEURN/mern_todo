@@ -27,7 +27,7 @@ export default class TodoList extends Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todos')
+        axios.get('http://localhost:5000/todos')
              .then( response => {
                  this.setState({
                      todo: response.data
@@ -39,7 +39,7 @@ export default class TodoList extends Component{
     }
 
     componentDidUpdate() {
-        axios.get('http://localhost:4000/todos')
+        axios.get('http://localhost:5000/todos')
              .then( response => {
                  this.setState({
                      todo: response.data
@@ -52,7 +52,7 @@ export default class TodoList extends Component{
 
     deleteItem(todo) {
         if (window.confirm(`Delete the todo ${todo.todo_description}?`)) {
-            axios.delete('http://localhost:4000/todos/'+todo._id)
+            axios.delete('http://localhost:5000/todos/'+todo._id)
              .then( response => {
                 this.props.history.push('/');
              })
