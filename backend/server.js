@@ -7,6 +7,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const todoRoutes = express.Router();
 const PORT = 4000;
+const path = require('path');
 
 
 // implemented file
@@ -32,6 +33,16 @@ app.use(express.json());
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 
 const connection = mongoose.connection;
+
+// serve static assets if in production
+if(process.env.NODE_ENV === 'production'){
+    // set static folder
+    app.use(express.static('./../mern-todo-app-s.mony/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    })
+}
 
 connection.once('open', function(){
     console.log("mongo db connection establish successfully")
